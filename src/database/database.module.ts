@@ -32,7 +32,8 @@ const API_KEY_PROD = 'PROD123456';
           password,
           database: dbName,
           // TODO: Cambiar a false en produccion
-          synchronize: true,
+          //synchronize: true,
+          synchronize: false,
           autoLoadEntities: true,
         };
       },
