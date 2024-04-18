@@ -13,6 +13,11 @@ Content-Type: application/json
 GET http://localhost:3000/users HTTP/1.1
 Content-Type: application/json
 
+
+###
+GET http://localhost:3000/customers HTTP/1.1
+Content-Type: application/json
+
 ###
 POST http://localhost:3000/customers HTTP/1.1
 Content-Type: application/json
@@ -22,6 +27,35 @@ Content-Type: application/json
   "lastName": "bellido",
   "phone": "+1 213 373 4253"
 }
+
+# ORDERS
+###
+GET http://localhost:3000/orders HTTP/1.1
+Content-Type: application/json
+
+###
+GET http://localhost:3000/orders/1 HTTP/1.1
+Content-Type: application/json
+
+###
+POST http://localhost:3000/orders HTTP/1.1
+Content-Type: application/json
+
+{
+  "customerId": 2
+}
+
+# ORDER-ITEMS
+###
+POST http://localhost:3000/order-item HTTP/1.1
+Content-Type: application/json
+
+{
+  "orderId": 1,
+  "productId": 1,
+  "quantity": 2
+}
+
 
 ###
 GET http://localhost:3000/brands HTTP/1.1
@@ -35,7 +69,7 @@ POST http://localhost:3000/brands HTTP/1.1
 Content-Type: application/json
 
 {
-  "name": "admin",
+  "name": "admins",
   "image": "www.lorempixel.com/200/200"
 }
 
@@ -77,6 +111,24 @@ Content-Type: application/json
   "image": "www.lorempixel.com/200/200",
   "categoriesIds": [1,2]
 }
+
+###
+PUT http://localhost:3000/products/4 HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Adidas n43",
+  "categoriesIds": [1,2]
+}
+
+### DELETE CATEGORY FROM PRODUCT
+DELETE http://localhost:3000/products/4/category/2 HTTP/1.1
+Content-Type: application/json
+
+### ADD CATEGORY TO PRODUCT
+PUT http://localhost:3000/products/4/category/2 HTTP/1.1
+Content-Type: application/json
+
 
 # // get all users
 # ###

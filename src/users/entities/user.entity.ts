@@ -1,11 +1,11 @@
 import {
   Entity,
   Column,
+  PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
   OneToOne,
   JoinColumn,
-  PrimaryGeneratedColumn,
 } from 'typeorm';
 
 import { Customer } from './customer.entity';
@@ -37,6 +37,6 @@ export class User {
   updateAt: Date;
 
   @OneToOne(() => Customer, (customer) => customer.user, { nullable: true })
-  @JoinColumn()
+  @JoinColumn({ name: 'customer_id' })
   customer: Customer;
 }
